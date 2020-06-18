@@ -13,8 +13,7 @@ http
       res.write(text); //write a response to the client
     } catch (err) {
       console.log("File is not found");
-      res.writeHead(404, { "Content-Type": "text/plain" });
-      res.write("404 Not Found");
+      res.write(fs.readFileSync("not_found.html"));
     }
     res.end(); //end the response
   })
